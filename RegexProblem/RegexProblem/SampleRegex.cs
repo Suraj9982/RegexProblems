@@ -14,6 +14,7 @@ namespace RegexProblem
         string NumberPattern = @"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}";
         string PassWordRuleOne = "^(?=.*[a-z]){8,}";
         string PassWordRuleTwo = "^(?=.*[a-z])(?=.*[A-Z]){8,}";
+        string PassWordRuleThree = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]){8,}";
         public void ValidateName(string Firstname)
         {
             Regex regex = new Regex(NamePattern);
@@ -66,7 +67,7 @@ namespace RegexProblem
                 Console.WriteLine("password is not valid or minimum 8 cahracters");
             }
         }
-        public void ValidatePasswordTwo(string password)
+        public void ValidatePasswordupper(string password)
         {
             Regex regex = new Regex(PassWordRuleTwo);
             bool pass = regex.IsMatch(password);
@@ -77,6 +78,19 @@ namespace RegexProblem
             else
             {
                 Console.WriteLine("password is not valid or minimum 8 cahracters and enter atleast one uppercase letter");
+            }
+        }
+        public void ValidatePasswordNumber(string password)
+        {
+            Regex regex = new Regex(PassWordRuleThree);
+            bool pass = regex.IsMatch(password);
+            if (pass)
+            {
+                Console.WriteLine("password is valid");
+            }
+            else
+            {
+                Console.WriteLine("password is not valid or minimum 8 cahracters , enter atleast one uppercase letter and atleast one number");
             }
         }
     }
