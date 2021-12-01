@@ -10,17 +10,31 @@ namespace RegexProblem
     class SampleRegex
     {
         string NamePattern = "^[A-Z][a-z]{2,}$";
+        string Emailpattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
         public void ValidateName(string Firstname)
         {
             Regex regex = new Regex(NamePattern);
             bool result = regex.IsMatch(Firstname);
             if (result)
             {
-                Console.WriteLine("firstname is valid");
+                Console.WriteLine("name is valid");
             }
             else
             {
-                Console.WriteLine("please enter valid firstname or firstname must have starts with capital letter");
+                Console.WriteLine("please enter valid name or name must have starts with capital letter");
+            }
+        }
+        public void ValidateEmail(string Email)
+        {
+            Regex regex = new Regex(Emailpattern);
+            bool email = regex.IsMatch(Email);
+            if (email)
+            {
+                Console.WriteLine("valid email");
+            }
+            else
+            {
+                Console.WriteLine("please Enter Valid Email");
             }
         }
     }
