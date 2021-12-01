@@ -10,7 +10,7 @@ namespace RegexProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("CHOOSE OPTION\n1.Validating Firstname\n2.Validate LastName\n3.Validate Email-Id\n4.Validate Mobile Number\n5.ValidatePasswordRuleOne\n6.Exit");
+                Console.WriteLine("CHOOSE OPTION\n1.Validating Firstname\n2.Validate LastName\n3.Validate Email-Id\n4.Validate Mobile Number\n5.Validate Password Rule One\n6.Validate Password UpperCase\n7.exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -37,13 +37,18 @@ namespace RegexProblem
                     case 5:
                         Console.WriteLine("Enter the Password");
                         string pass = Console.ReadLine();
-                        regex.ValidatePasswordRuelOne(pass);
+                        regex.ValidatePasswordOne(pass);
                         break;
                     case 6:
+                        Console.WriteLine("Enter the Password");
+                        string upperpass = Console.ReadLine();
+                        regex.ValidatePasswordTwo(upperpass);
+                        break;
+                    case 7:
                         flag = false;
                         break;
                     default:
-                        Console.WriteLine("your choice should be between 1 to 6");
+                        Console.WriteLine("your choice should be between 1 to 7");
                         break;
                 }
 
