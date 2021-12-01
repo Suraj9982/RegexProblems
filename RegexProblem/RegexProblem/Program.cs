@@ -10,7 +10,7 @@ namespace RegexProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("CHOOSE OPTION\n1.Validating Firstname\n2.Validate LastName\n3.Validate Email-Id\n4.Validate Mobile Number\n5.Validate Password Rule One\n6.Validate Password UpperCase\n7.Validating Password Number\n8.Validate Password Special Character\n9.Exit");
+                Console.WriteLine("CHOOSE OPTION\n1.Validating Firstname\n2.Validate LastName\n3.Validate Email-Id\n4.Validate Mobile Number\n5.Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -35,30 +35,10 @@ namespace RegexProblem
                         regex.ValidateNumber(num);
                         break;
                     case 5:
-                        Console.WriteLine("Enter the Password");
-                        string pass = Console.ReadLine();
-                        regex.ValidatePasswordOne(pass);
-                        break;
-                    case 6:
-                        Console.WriteLine("Enter the Password");
-                        string upperpass = Console.ReadLine();
-                        regex.ValidatePasswordupper(upperpass);
-                        break;
-                    case 7:
-                        Console.WriteLine("Enter the Password");
-                        string numberpass = Console.ReadLine();
-                        regex.ValidatePasswordNumber(numberpass);
-                        break;
-                    case 8:
-                        Console.WriteLine("Enter the Password");
-                        string specialpass = Console.ReadLine();
-                        regex.ValidatePasswordNumber(specialpass);
-                        break;
-                    case 9:
                         flag = false;
                         break;
                     default:
-                        Console.WriteLine("your choice should be between 1 to 9");
+                        Console.WriteLine("your choice should be between 1 to 5");
                         break;
                 }
 

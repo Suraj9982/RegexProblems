@@ -12,10 +12,6 @@ namespace RegexProblem
         string NamePattern = "^[A-Z][a-z]{2,}$";
         string Emailpattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
         string NumberPattern = @"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}";
-        string PassWordRuleOne = "^(?=.*[a-z]){8,}";
-        string PassWordRuleTwo = "^(?=.*[a-z])(?=.*[A-Z]){8,}";
-        string PassWordRuleThree = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]){8,}";
-        string PassWordRuleFour = @"^(?=.*[0-9])(?=.*[A-Z])(?=.*[*.!@$%^&(){}[]:;<>,.?/~_+-=|\]).{8,32}$";
         public void ValidateName(string Firstname)
         {
             Regex regex = new Regex(NamePattern);
@@ -53,58 +49,6 @@ namespace RegexProblem
             else
             {
                 Console.WriteLine("Please enter valid number");
-            }
-        }
-        public void ValidatePasswordOne(string password)
-        {
-            Regex regex = new Regex(PassWordRuleOne);
-            bool pass = regex.IsMatch(password);
-            if (pass)
-            {
-                Console.WriteLine("password is valid");
-            }
-            else
-            {
-                Console.WriteLine("password is not valid or minimum 8 cahracters");
-            }
-        }
-        public void ValidatePasswordupper(string password)
-        {
-            Regex regex = new Regex(PassWordRuleTwo);
-            bool pass = regex.IsMatch(password);
-            if (pass)
-            {
-                Console.WriteLine("password is valid");
-            }
-            else
-            {
-                Console.WriteLine("password is not valid or minimum 8 cahracters and enter atleast one uppercase letter");
-            }
-        }
-        public void ValidatePasswordNumber(string password)
-        {
-            Regex regex = new Regex(PassWordRuleThree);
-            bool pass = regex.IsMatch(password);
-            if (pass)
-            {
-                Console.WriteLine("password is valid");
-            }
-            else
-            {
-                Console.WriteLine("password is not valid or minimum 8 cahracters , enter atleast one uppercase letter and atleast one number");
-            }
-        }
-        public void ValidatePasswordSpecial(string password)
-        {
-            Regex regex = new Regex(PassWordRuleFour);
-            bool pass = regex.IsMatch(password);
-            if (pass)
-            {
-                Console.WriteLine("password is valid");
-            }
-            else
-            {
-                Console.WriteLine("password is not valid or minimum 8 characters , enter atleast one uppercase letter, atleast one number and one special character");
             }
         }
     }
