@@ -11,6 +11,7 @@ namespace RegexProblem
     {
         string NamePattern = "^[A-Z][a-z]{2,}$";
         string Emailpattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+        string NumberPattern = @"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}";
         public void ValidateName(string Firstname)
         {
             Regex regex = new Regex(NamePattern);
@@ -35,6 +36,19 @@ namespace RegexProblem
             else
             {
                 Console.WriteLine("please Enter Valid Email");
+            }
+        }
+        public void ValidateNumber(string number)
+        {
+            Regex regex = new Regex(NumberPattern);
+            bool num = regex.IsMatch(number);
+            if (num)
+            {
+                Console.WriteLine("Number is Valid");
+            }
+            else
+            {
+                Console.WriteLine("Please enter valid number");
             }
         }
     }
