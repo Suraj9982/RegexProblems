@@ -21,7 +21,7 @@ namespace RegexProblem
                         break;
                     case 2:
                         Console.WriteLine("Enter the Lastname");
-                        string lastname= Console.ReadLine();
+                        string lastname = Console.ReadLine();
                         regex.ValidateName(lastname);
                         break;
                     case 3:
